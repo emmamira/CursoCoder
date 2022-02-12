@@ -1,0 +1,18 @@
+import sys
+argumentos = sys.argv
+def año_bisiesto(año):
+    if año%4 == 0 and año%100 != 0 or año%400 == 0:
+        return "El año " +str(año)+ " es bisiesto"
+    else:
+        return "El año "+str(año)+ " no es bisiesto"
+    return mensaje
+try:
+    año=int(argumentos[1])
+except ValueError:
+    print("Error: el parámetro no es un año")
+    año=int(input("Ingrese un año "))
+    mensaje = año_bisiesto(año)
+    print(mensaje)
+    sys.exit(1)
+mensaje = año_bisiesto(int(argumentos[1]))
+print(mensaje)
